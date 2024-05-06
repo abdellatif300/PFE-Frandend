@@ -1,0 +1,48 @@
+<section class="testimonial_part">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-xl-5">
+        <div class="section_tittle text-center">
+          <p>tesimonials</p>
+          <h2>Happy Students</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="textimonial_iner ">
+          <div class="testimonial_slider">
+            <div class="row">
+              <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center  mx-auto" *ngFor="let item of feedbacks">
+                <div class="testimonial_slider_text">
+                  <p>{{item.comments}}</p>
+                  <h4>{{item.participantId}}</h4>
+                  <h5>
+                    <div class="author_rating">
+                      <div class="rating">
+                        <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                          <a *ngIf="star <= +item.score">
+                            <img src="../../assets/img/icon/color_star.svg" alt="Gold Star">
+                          </a>
+                          <a *ngIf="star > +item.score">
+                            <img src="../../assets/img/icon/star.svg" alt="White Star">
+                          </a>
+                        </ng-container>
+                      </div>
+                      <p>{{ item.score }} Ratings</p>
+                    </div>
+
+                  </h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

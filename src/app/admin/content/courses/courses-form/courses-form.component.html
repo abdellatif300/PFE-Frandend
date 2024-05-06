@@ -1,0 +1,96 @@
+<app-sidebar></app-sidebar>
+
+<!-- Content Start -->
+<div class="content-start transition">
+  <div class="container-fluid dashboard px-5">
+
+    <div class="content-header">
+      <h1>Add a Course</h1>
+    </div>
+
+    <div class="row content-form">
+
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="card p-4">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="fw-semibold">Title</label>
+              <input type="text" formControlName="title" class="form-control p-2" required>
+            </div>
+
+            <div class="mb-3 row gap-3 ">
+              <div class="col">
+                <label class="fw-semibold px-2">Hours</label>
+                <input type="number" formControlName="hours" class="form-control p-2" required>
+              </div>
+
+              <div class="col">
+                <label class="fw-semibold px-2">Cost</label>
+                <input type="number" formControlName="cost" class="form-control p-2" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="fw-semibold">Description</label>
+              <textarea formControlName="description" rows="6" class="form-control p-2" required></textarea>
+            </div>
+
+
+            <!-- Type Dropdown -->
+            <div class="mb-3">
+              <label class="fw-semibold">Type</label>
+              <mat-select formControlName="type" class="form-control p-2" required (change)="selectType($event)">
+                <mat-option *ngFor="let type of types" [value]="type">{{type}}</mat-option>
+              </mat-select>
+            </div>
+
+            <!-- Select Company Dropdown (if Type is COMPANY) -->
+            <div *ngIf="form.get('type')?.value === 'COMPANY'" class="mb-3">
+              <label class="fw-semibold">Select Company</label>
+              <mat-select formControlName="companyId" class="form-control p-2" (change)="selectCompany($event)"
+                required>
+                <mat-option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</mat-option>
+              </mat-select>
+            </div>
+
+
+            <div class="mb-3">
+              <label class="fw-semibold">Category</label>
+              <input type="text" formControlName="category" class="form-control p-2" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="fw-semibold">Image</label>
+              <input type="file" formControlName="image" (change)="onFileChange($event)" class="form-control p-2"
+                required>
+            </div>
+
+
+
+            <!-- Trainer Dropdown -->
+            <div class="mb-3">
+              <label class="fw-semibold">Trainer</label>
+              <mat-select formControlName="trainerId" class="form-control p-2" required
+                (change)="selectTrainer($event)">
+                <mat-option *ngFor="let trainer of trainers" [value]="trainer.id">
+                  {{ trainer.firstname }} {{ trainer.lastname }}
+                </mat-option>
+              </mat-select>
+            </div>
+
+
+
+
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            <ng-toast></ng-toast>
+
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

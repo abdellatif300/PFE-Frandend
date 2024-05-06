@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Course scheduling</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Select a Course</mat-label>
+    <mat-select [(value)]="selectedCourse" [formControl]="courseControl">
+      <mat-option *ngFor="let course of courses" [value]="course">
+        {{ course.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <h6 *ngIf="selectedCourse">Course made for : {{ selectedCourse?.type | lowercase}}</h6>
+    <h6 *ngIf="selectedCourse">Trainer : {{ selectedCourse?.trainer.firstname + ' '+ selectedCourse?.trainer.lastname | uppercase}}</h6>
+    <h6>Start at: <span class="fw-semibold ">{{ data.start | date: 'MMM d, y, h:mm a' }}</span></h6>
+    <h6>End at: <span class="fw-semibold ">{{ data.end | date: 'MMM d, y, h:mm a' }}</span></h6>
+    <h6>Hours: <span class="fw-semibold ">{{data.hours}}</span></h6>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onSubmit()">OK</button>
+    <button mat-button (click)="onCancel()">Cancel</button>
+</div>

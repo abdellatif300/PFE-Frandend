@@ -1,0 +1,87 @@
+<table mat-table [dataSource]="courses" class="mat-elevation-z8 demo-table mt-3">
+  <!-- Title Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Title</th>
+    <td class="line" mat-cell *matCellDef="let element">{{element.title}}</td>
+  </ng-container>
+
+  <!-- Hours Column -->
+  <ng-container matColumnDef="hours">
+    <th mat-header-cell *matHeaderCellDef>Hours</th>
+    <td class="line" mat-cell *matCellDef="let element">{{element.hours}}</td>
+  </ng-container>
+
+  <!-- Cost Column -->
+  <ng-container matColumnDef="cost">
+    <th mat-header-cell *matHeaderCellDef>Cost</th>
+    <td class="line" mat-cell *matCellDef="let element">{{element.cost}}</td>
+  </ng-container>
+
+  <!-- Description Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef>Description</th>
+    <td class="line" mat-cell *matCellDef="let element">
+      <span *ngIf="element.description.length > 15">
+        {{ element.description.substring(0, 15) }}
+        <span (click)="onOpenText(element.description)" class="text-primary fw-bold"> ...</span>
+      </span>
+      <span *ngIf="element.description.length <= 15">
+        {{ element.description }}
+      </span>
+    </td>
+  </ng-container>
+
+
+
+  <!-- Type Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef>Type</th>
+    <td class="line" mat-cell *matCellDef="let element">{{element.type}}</td>
+  </ng-container>
+
+  <!-- Category Column -->
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef>Category</th>
+    <td class="line" mat-cell *matCellDef="let element">{{element.category}}</td>
+  </ng-container>
+
+  <!-- Image Column -->
+  <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef>Image</th>
+    <td class="line-img" mat-cell *matCellDef="let element">
+      <a (click)="onOpenImage(element.image)">
+        <mat-icon>image</mat-icon>
+      </a>
+    </td>
+  </ng-container>
+
+  <!-- Trainer Column -->
+  <ng-container matColumnDef="trainer">
+    <th mat-header-cell *matHeaderCellDef>Trainer</th>
+    <td class="line" mat-cell *matCellDef="let element" class="text-primary pointer-event fw-bold text-capitalize"
+      (click)="navigateToTrainerProfile(element.trainer?.id)">
+      {{ element.trainer?.firstname }} {{ element.trainer?.lastname }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Operations</th>
+    <td class="line d-flex " mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="editCourse(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteCourse(element.id)">
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+
+
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row (click)="clickedRows.add(row)" [class.demo-row-is-clicked]="clickedRows.has(row)"
+    *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

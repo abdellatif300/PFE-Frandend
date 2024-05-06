@@ -1,0 +1,63 @@
+<app-sidebar></app-sidebar>
+<!--Content Start-->
+<div class="content-start transition">
+  <div class="container-fluid dashboard px-5">
+
+    <div class="content-header">
+      <h1>Add a Trainer</h1>
+    </div>
+
+
+    <div class="row content-form">
+
+
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="card p-4">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <div class="card-body p-4">
+              <div class="mb-3">
+                <label class="fw-semibold">First Name</label>
+                <input type="text" formControlName="firstname" class="form-control p-2" required="">
+              </div>
+              <div class="mb-3">
+                <label class="fw-semibold">Last Name</label>
+                <input type="text" formControlName="lastname" class="form-control p-2" required="">
+              </div>
+              <div class="mb-3">
+                <label class="fw-semibold">Email</label>
+                <input type="email" formControlName="email" class="form-control p-2" required="">
+              </div>
+              <div class="mb-3">
+                <label class="fw-semibold">Phone</label>
+                <input type="email" formControlName="phone" class="form-control p-2">
+              </div>
+              <div class="mb-3">
+                <label class="fw-semibold">Password</label>
+                <input type="password" formControlName="password" class="form-control p-2">
+              </div>
+
+              <div class="mb-3">
+                <label class="fw-semibold">Image</label>
+                <input type="file" (change)="onFileChange($event)" class="form-control p-2" required>
+              </div>
+
+
+              <div class="mb-3">
+                <app-tags-input></app-tags-input>
+              </div>
+
+            </div>
+
+
+            <div class="card-footer text-right">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

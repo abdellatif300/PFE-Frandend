@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+
+
+<!-- banner part-->
+<app-banner></app-banner>
+
+<!-- feature_part start-->
+<app-features></app-features>
+
+<!-- learning part -->
+<app-learning></app-learning>
+
+<!-- member_counter counter -->
+<section class="member_counter bg-primary ">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <div class="single_member_counter" [@count]="teacherCount">
+          <span class="counter">{{ teacherCount }}</span>
+          <h4>All Teachers</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="single_member_counter" [@count]="studentCount">
+          <span class="counter">{{ studentCount }}</span>
+          <h4>All Students</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="single_member_counter" [@count]="onlineCount">
+          <span class="counter">{{ onlineCount }}</span>
+          <h4>Online Students</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="single_member_counter" [@count]="companyCount">
+          <span class="counter">{{ companyCount }}</span>
+          <h4>Companies</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--::special courses ::-->
+<app-special-courses></app-special-courses>
+
+<!-- learning part start-->
+<app-advanced-feature></app-advanced-feature>
+
+<!--::review_part start::-->
+<app-reviews></app-reviews>
+
+<!-- footer part start-->
+<app-footer></app-footer>
+<!-- footer part end-->
+
+<!-- jquery plugins here-->
+<!-- jquery -->
+<!-- <script src="./../../../assets/js/jquery-1.12.1.min.js"></script> -->
+<!-- popper js -->
+<!-- <script src="./../../../assets/js/popper.min.js"></script> -->
+<!-- bootstrap js -->
+<!-- <script src="./../../../assets/js/bootstrap.min.js"></script> -->
+<!-- easing js -->
+<!-- <script src="./../../../assets/js/jquery.magnific-popup.js"></script> -->
+<!-- swiper js -->
+<!-- <script src="./../../../assets/js/swiper.min.js"></script> -->
+<!-- swiper js -->
+<!-- <script src="./../../../assets/js/masonry.pkgd.js"></script> -->
+<!-- particles js -->
+<!-- <script src="./../../../assets/js/owl.carousel.min.js"></script> -->
+<!-- <script src="./../../../assets/js/jquery.nice-select.min.js"></script> -->
+<!-- swiper js -->
+<!-- <script src="./../../../assets/js/slick.min.js"></script>
+<script src="./../../../assets/js/jquery.counterup.min.js"></script>
+<script src="./../../../assets/js/waypoints.min.js"></script> -->
+<!-- custom js -->
+<!-- <script src="./../../../assets/js/custom.js"></script> -->
+

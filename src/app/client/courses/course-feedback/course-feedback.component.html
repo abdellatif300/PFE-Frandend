@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+</head>
+<body>
+
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" *ngIf="participant && !participant.evaluated && !success">
+        <a class="navbar-brand" routerLink="/"> <img src="./../../../assets/img/logo.png" alt="logo"> </a>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" formControlName="comments" placeholder="Enter your comments"></textarea>
+
+        <label for="score">Score:</label>
+        <input type="number" id="score" formControlName="score" placeholder="Enter your score (1-5)" min="1" max="5">
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+
+      <p *ngIf="participant && participant.evaluated" class="feedback-message">
+        Hey {{ participant.firstname }}, you have already added your feedback.
+      </p>
+
+      <p *ngIf="success" class="feedback-message">
+        Thank you for your feedback .
+      </p>
+
+</body>
+</html>

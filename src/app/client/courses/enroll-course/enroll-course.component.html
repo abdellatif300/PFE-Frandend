@@ -1,0 +1,50 @@
+<!-- enroll-course.component.html -->
+<div class="container-fluid wrapper">
+  <div class="row justify-content-center align-items-center align-items-center  flex-column  py-4 ">
+    <div class="col-12 col-md-6 col-lg-6 p-3">
+      <a class="navbar-brand" routerLink="/"> <img src="./../../../assets/img/logo.png" alt="logo"> </a>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6 ">
+      <div class="card p-2 ">
+        <form [formGroup]="participantForm">
+
+          <div class="card-body p-4">
+            <div class="mb-3">
+              <label class="fw-semibold">First Name</label>
+              <input type="text" formControlName="firstname" class="form-control p-2" required>
+              <div *ngIf="isFieldInvalid('firstname')" class="text-danger">First Name is required</div>
+            </div>
+            <div class="mb-3">
+              <label class="fw-semibold">Last Name</label>
+              <input type="text" formControlName="lastname" class="form-control p-2" required>
+              <div *ngIf="isFieldInvalid('lastname')" class="text-danger">Last Name is required</div>
+            </div>
+            <div class="mb-3">
+              <label class="fw-semibold">BirthDay</label>
+              <input type="text" formControlName="birthday" class="form-control p-2" required>
+              <div *ngIf="isFieldInvalid('birthday')" class="text-danger">Invalid date format (YYYY-MM-DD)</div>
+            </div>
+            <div class="mb-3">
+              <label class="fw-semibold">Email</label>
+              <input type="email" formControlName="email" class="form-control p-2" required>
+              <div *ngIf="isFieldInvalid('email')" class="text-danger fw-semibold">Invalid email format</div>
+            </div>
+            <div class="mb-3">
+              <label class="fw-semibold">Phone</label>
+              <input type="text" formControlName="phone" class="form-control p-2">
+            </div>
+            <div class="mb-3">
+              <label class="fw-semibold">City</label>
+              <input type="text" formControlName="city" class="form-control p-2">
+            </div>
+          </div>
+
+          <div class="card-footer text-right">
+            <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

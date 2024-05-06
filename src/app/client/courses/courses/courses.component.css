@@ -1,0 +1,17 @@
+aside {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+main {
+  text-transform: capitalize;
+}
+.icon-control {
+  margin-top: 5px;
+  float: right;
+  font-size: 80%;
+}
+
+.clear:hover {
+  background-color: rgb(72, 72, 255) !important;
+  color: white !important;
+}

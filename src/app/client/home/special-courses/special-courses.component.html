@@ -1,0 +1,52 @@
+<section id="special_cource" class="special_cource padding_top">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-5">
+        <div class="section_tittle text-center">
+          <p>popular courses</p>
+          <h2>Special Courses</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-lg-4" *ngFor="let course of courses">
+        <div class="single_special_cource mb-4 border border-5 rounded-bottom-3">
+          <div class="course-img">
+            <img [src]="course.image" class="special_img" alt="{{ course.title }}">
+          </div>
+          <div class="special_cource_text">
+            <a class="btn_4 fw-semibold  text-white ">{{course.category}}</a>
+            <h4>${{course.cost}}</h4>
+            <div class="course-title">
+              <a [routerLink]="['/course-details', course.id]">
+                <h3>{{ course.title }}</h3>
+              </a>
+            </div>
+
+            <div class="author_info">
+              <div class="author_img">
+                <img [src]="course.trainer.image" alt="">
+                <div class="author_info_text">
+                  <p>Conduct by:</p>
+                  <h5><a [routerLink]="['/trainer-profile', course.trainer.id]">{{course.trainer.firstname}} {{course.trainer.lastname}}</a></h5>
+                </div>
+              </div>
+              <div class="author_rating">
+                <div class="rating">
+                  <a href="#"><img src="../../assets/img/icon/color_star.svg" alt=""></a>
+                  <a href="#"><img src="../../assets/img/icon/color_star.svg" alt=""></a>
+                  <a href="#"><img src="../../assets/img/icon/color_star.svg" alt=""></a>
+                  <a href="#"><img src="../../assets/img/icon/color_star.svg" alt=""></a>
+                  <a href="#"><img src="../../assets/img/icon/star.svg" alt=""></a>
+                </div>
+                <p>3.8 Ratings</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

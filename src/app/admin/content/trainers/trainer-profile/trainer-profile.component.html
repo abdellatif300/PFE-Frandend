@@ -1,0 +1,117 @@
+<app-navbar *ngIf="!role"></app-navbar>
+
+<div *ngIf="role" class=" container mt-2 ">
+
+
+  <div class="logo float-start " routerLink="/dashboard">
+    <h2 class="px-3">
+      <img src="assets/img/logo.png">
+    </h2>
+  </div>
+
+  <div routerLink="/logout" *ngIf=" role === 'TRAINER' " class="float-end logout-btn">
+    <i class='bx bx-log-out'></i>
+    <a class="">Log out</a>
+  </div>
+</div>
+
+
+
+
+
+<div class="page-content mt-5 pt-5">
+  <div class="container mt-2">
+    <div class="cover shadow-lg bg-white">
+      <div class="cover-bg p-3 p-lg-4 text-white">
+        <div class="row">
+          <div class="col-lg-4 col-md-5 text-center d-flex align-items-center justify-content-center ">
+
+            <div class="user-image hover-effect bg-white shadow-sm ">
+              <img src="{{ trainer?.image }}" alt="Trainer Image" />
+
+            </div>
+          </div>
+
+          <div class="col-lg-8 col-md-7 text-center text-md-start">
+            <h2 class="h1 mt-4 name">
+              {{ trainer?.firstname }} {{ trainer?.lastname }}
+            </h2>
+            <p class="title">Trainer at ETrain</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section pt-4 px-3 px-lg-4 mt-1">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="h3 mb-3">About Me</h2>
+            <p>
+              Hello! I'm {{trainer?.firstname}}. I'm driven by a profound passion for creativity and innovation.
+              My skills extend across various domains, where I specialize in {{keywords[0]}}, {{keywords[1]}}.
+              As a seasoned professional, I bring a unique perspective to my work, blending expertise in {{keywords[3]}}
+              with a mastery of design tools like Photoshop and Sketch.
+            </p>
+          </div>
+          <div class="col-md-5 offset-md-1">
+            <div class="row mt-2 py-5">
+
+              <div class="col-sm-4">
+                <div class="pb-1">Email</div>
+              </div>
+              <div class="col-sm-8">
+                <div class="pb-1 text-secondary">{{ trainer?.email }}</div>
+              </div>
+              <div class="col-sm-4">
+                <div class="pb-1">Phone</div>
+              </div>
+              <div class="col-sm-8">
+                <div class="pb-1 text-secondary">{{ trainer?.phone }}</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="d-print-none" />
+
+      <div class="skills-section px-3 px-lg-4">
+        <h2 class="h3 mb-3">Professional Skills</h2>
+        <div class="row py-2 mb-5 d-flex gap-2">
+
+            <div class="skill" *ngFor="let key of keywords">{{key}}</div>
+
+
+          <hr class="d-print-none mt-4" />
+
+          <div class="page-break"></div>
+          <div class="education-section px-3 px-lg-4 pb-4">
+            <h2 class="h3 mb-4">Courses Made</h2>
+
+            <div class="timeline" *ngFor="let course of courses">
+              <div class="timeline-card timeline-card-success card shadow-sm">
+                <div class="card-body">
+                  <div class="h4 text-capitalize">
+                    {{course.title}}
+                    <span class="type text-muted h6">for {{course.type}}</span>
+                    <div class="category">{{course.category}}</div>
+                  </div>
+                  <div class="desc">{{course.description}}</div>
+                  <div class="text-muted border-bottom text-small py-3 d-flex gap-5"
+                    *ngFor="let sch of course.schedules">
+                    <span class="startdate">{{ sch.startDate | date: 'MMM d, y, h:mm a' }}</span> - <span
+                      class="enddate">{{ sch.endDate | date: 'MMM d, y, h:mm a' }}</span>
+                  </div>
+
+
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

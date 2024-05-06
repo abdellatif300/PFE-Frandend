@@ -1,0 +1,32 @@
+.demo-table {
+  width: 100%;
+}
+
+
+
+.line {
+  font-size: 13px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px;
+}
+
+.line-img {
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px;
+}
+.line-img a {
+  color: blue;
+}
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

@@ -1,0 +1,51 @@
+
+<form style="width: 600px;">
+
+  <div class="card-body p-4">
+    <div class="mb-3 mt-1 ">
+      <label class="fw-semibold">Title</label>
+      <input type="text" formControlName="firstname" class="form-control p-2 px-3 " required="">
+    </div>
+
+    <div class="mb-3">
+      <label class="fw-semibold">Category</label>
+      <input type="text" formControlName="lastname" class="form-control p-2 px-3 " required="">
+    </div>
+
+    <div class="mb-3">
+      <label class="fw-semibold">Cost</label>
+      <input type="number" formControlName="email" class="form-control p-2 px-3 " required="">
+    </div>
+
+    <div class="mb-3">
+      <label class="fw-semibold">Description</label>
+      <input type="text" formControlName="phone" class="form-control p-2 px-3 ">
+    </div>
+    <div class="mb-3">
+      <label class="fw-semibold">Hours</label>
+      <input type="date" formControlName="phone" class="form-control p-2 px-3 ">
+    </div>
+    <div class="mb-3">
+      <label class="fw-semibold">Type</label>
+      <input type="text" formControlName="phone" class="form-control p-2 px-3 ">
+    </div>
+    <!-- <div class="mb-3">
+      <label class="fw-semibold">Password</label>
+      <input type="password" formControlName="password" class="form-control p-2 px-3 ">
+    </div> -->
+
+    <div class="mb-3">
+      <label class="fw-semibold">Image</label>
+      <input type="file" formControlName="image"  class="form-control p-2 px-3 "
+        required>
+    </div>
+
+
+  </div>
+
+
+  <div mat-dialog-actions>
+    <button mat-button >Save</button>
+    <button mat-button >Cancel</button>
+  </div>
+</form>

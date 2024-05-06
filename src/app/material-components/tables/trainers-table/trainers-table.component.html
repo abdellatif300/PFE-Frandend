@@ -1,0 +1,94 @@
+<table mat-table [dataSource]="trainers" class="mat-elevation-z8 demo-table mt-3">
+
+
+    <!-- Full name Column -->
+    <ng-container matColumnDef="fullname">
+      <th mat-header-cell *matHeaderCellDef>Full Name</th>
+      <td mat-cell *matCellDef="let element" class="text-primary pointer-event fw-bold text-capitalize" (click)="navigateToTrainerProfile(element.id)">
+        {{ element.firstname }} {{ element.lastname }}
+      </td>
+    </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let element">{{element.email}}</td>
+  </ng-container>
+
+  <!-- Phone Column -->
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef>Phone</th>
+    <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+  </ng-container>
+
+  <!-- Keywords Column -->
+<ng-container matColumnDef="keywords">
+  <th mat-header-cell *matHeaderCellDef>Keywords</th>
+  <td mat-cell *matCellDef="let element">
+    <span *ngIf="element.keywords.length > 10">
+      {{ element.keywords.substring(0, 10)}}
+      <span (click)="onOpenText(element.keywords)" class="text-primary fw-bold "> ...</span>
+    </span>
+    <span *ngIf="element.keywords.length <= 10">
+      {{ element.keywords }}
+    </span>
+  </td>
+
+</ng-container>
+
+
+
+  <!-- Trainer Column -->
+  <ng-container matColumnDef="trainer">
+    <th mat-header-cell *matHeaderCellDef>Trainer</th>
+    <td mat-cell *matCellDef="let element" class="text-primary pointer-event fw-bold text-capitalize" (click)="navigateToTrainerProfile(element.trainer?.id)">
+       Full Profile
+    </td>
+  </ng-container>
+
+
+  <!-- Active Column -->
+  <ng-container matColumnDef="active">
+    <th mat-header-cell *matHeaderCellDef>Active</th>
+    <td mat-cell *matCellDef="let element">{{element.active}}</td>
+  </ng-container>
+
+  <!-- Image Column -->
+  <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef>Image</th>
+    <td mat-cell *matCellDef="let element">
+      <a (click)="onOpenImage(element.image)" class="text-primary ">
+        <mat-icon>image</mat-icon>
+      </a>
+    </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element" class="d-flex ">
+      <button mat-icon-button (click)="editTrainer(element)">
+        <mat-icon color="yellow">edit</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="deleteTrainer(element.id)">
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+
+      <button mat-icon-button  *ngIf="!element.active" (click)="validateTrainer(element.id)">
+        <mat-icon color="primary">done_all</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+      mat-row
+      (click)="clickedRows.add(row)"
+      [class.demo-row-is-clicked]="clickedRows.has(row)"
+      *matRowDef="let row; columns: displayedColumns;"
+  ></tr>
+</table>
+

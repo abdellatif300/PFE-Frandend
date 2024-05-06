@@ -1,0 +1,170 @@
+<app-navbar></app-navbar>
+
+<section class="special_cource padding_top">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-5">
+        <div class="section_tittle text-center">
+          <p>all courses</p>
+          <h2>Special Courses</h2>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="special_cource m-auto  px-4">
+  <div class="row m-auto">
+    <aside style="width: 280px;" class="pt-5">
+
+      <div class="card  border-2 ">
+        <article class="filter-group">
+
+          <div class="card-body">
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchQuery"
+                (input)="applyFilters()">
+              <div class="input-group-append">
+                <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+
+
+        <!-- Categories -->
+        <article class="filter-group">
+          <header class="card-header">
+            <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+              <i class="icon-control fa fa-chevron-down"></i>
+              <h6 class="title">Categories </h6>
+            </a>
+          </header>
+          <div class="filter-content collapse show" id="collapse_2">
+            <div class="card-body">
+              <label class="custom-control custom-checkbox" *ngFor="let category of categories">
+                <input type="checkbox" [checked]="selectedCategories.has(category.id)"
+                  (change)="filterByCategory(category.id)" class="custom-control-input">
+                <div class="custom-control-label">{{ category.categoryName }}
+                  <b class="badge badge-pill badge-light float-right">{{ getFilteredCourseCount(category.id) }}</b>
+                </div>
+              </label>
+            </div>
+          </div>
+        </article>
+
+        <!-- Price Range -->
+        <article class="filter-group">
+          <header class="card-header">
+            <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+              <i class="icon-control fa fa-chevron-down"></i>
+              <h6 class="title">Price range </h6>
+            </a>
+          </header>
+          <div class="filter-content collapse show" id="collapse_3">
+            <div class="card-body">
+              <input type="range" class="custom-range" min="0" [max]="maxPrice" [value]="maxPrice"
+                [(ngModel)]="priceRange.max" (change)="applyFilters()">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>0 DH</label>
+                </div>
+                <div class="form-group text-right col-md-6">
+                  <label>{{ priceRange.max }} DH</label>
+                </div>
+              </div>
+              <!-- <button class="btn btn-block btn-primary" >Apply</button> -->
+            </div>
+          </div>
+        </article>
+
+
+
+        <!-- Type -->
+        <!-- <article class="filter-group">
+          <header class="card-header">
+            <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
+              <i class="icon-control fa fa-chevron-down"></i>
+              <h6 class="title">Type </h6>
+            </a>
+          </header>
+          <div class="filter-content collapse show" id="collapse_4">
+            <div class="card-body">
+              <label class="checkbox-btn">
+                <input type="checkbox" [checked]="selectedTypes.has('COMPANY')" (change)="filterByType('COMPANY')">
+                <span class="btn btn-light"> Companies </span>
+              </label>
+
+              <label class="checkbox-btn">
+                <input type="checkbox" [checked]="selectedTypes.has('PARTICIPANT')"
+                  (change)="filterByType('PARTICIPANT')">
+                <span class="btn btn-light"> Participants </span>
+              </label>
+            </div>
+          </div>
+        </article> -->
+
+
+        <!-- Clear All Filters -->
+        <div class="p-2">
+          <button class="btn btn-block border-primary text-bg-light clear" (click)="clearAllFilters()">Clear All</button>
+        </div>
+
+
+      </div>
+
+    </aside>
+
+    <main class="col-md-9">
+      <div class="row">
+        <div class="col-sm-6 col-lg-4" *ngFor="let course of filteredCourses">
+          <div class="single_special_cource mb-4 border border-5 rounded-bottom-3">
+            <div class="course-img">
+              <img [src]="course.image" class="special_img" alt="{{ course.title }}">
+            </div>
+            <div class="special_cource_text">
+              <a class="btn_4 text-white ">{{course.category}}</a>
+              <h4>${{course.cost}}</h4>
+              <div class="course-title">
+                <a [routerLink]="['/course-details', course.id]">
+                  <h3>{{ course.title }}</h3>
+                </a>
+              </div>
+
+              <div class="author_info">
+                <div class="author_img">
+                  <img [src]="course.trainer.image" alt="">
+                  <div class="author_info_text">
+                    <p>Conduct by:</p>
+                    <h5><a [routerLink]="['/trainer-profile', course.trainer.id]">{{course.trainer.firstname}}
+                        {{course.trainer.lastname}}</a></h5>
+                  </div>
+                </div>
+                <div class="author_rating">
+                  <div class="rating" [innerHTML]="getStarRatingHtml(getAverageRating(course.feedbacks))"></div>
+
+                  <p>{{ getAverageRating(course.feedbacks) }} Ratings</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+
+
+
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,31 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #081A51;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 30px;
+  z-index: 10000;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+}
+
+.loader .spinner-border {
+  width: 50px;
+  height: 50px;
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.5 for semi-transparent) */
+  z-index: 9999;
+}

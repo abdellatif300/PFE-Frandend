@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:300,400,500,600,700,800|Roboto:300,400,500");
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.wrapper {
+  width: 500px;
+  padding: 10px;
+}
+
+.area {
+  width: 100%;
+  border: solid 1px;
+  padding: 10px;
+}
+

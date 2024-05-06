@@ -1,0 +1,27 @@
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+  .single_padding_top {
+    padding-top: 70px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+  .single_padding_top {
+    padding-top: 70px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+  .single_padding_top {
+    padding-top: 70px !important;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+  .single_padding_top {
+    padding-top: 80px !important;
+  }
+}

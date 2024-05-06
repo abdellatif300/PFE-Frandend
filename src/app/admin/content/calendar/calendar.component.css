@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:300,400,500,600,700,800|Roboto:300,400,500");
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+
+
+.calendar-wrapper {
+  margin: -30px;
+  margin-top: 30px !important;
+  padding: 10px !important;
+  border-radius: 15px;
+
+}
+
+.calendar {
+  border-radius: 15px;
+  width: 100% !important;
+}

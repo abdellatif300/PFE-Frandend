@@ -1,0 +1,84 @@
+
+.dashboard .card  .icon-home {
+	font-size: 35px;
+	padding: 5px;
+	border-radius: 5px;
+	color: #fff !important;
+}
+
+/** 3.4 Card**/
+.card-description{
+	color: #7c8db5!important;
+}
+.card .card-header {
+	font-weight: 900;
+	font-size: 16px;
+	color: #555 !important;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: #ffffff;
+	border-bottom: 1px solid #E5E7EB;
+}
+.card.card-statistic {
+	box-shadow: 1px 2px 5px rgba(47, 170, 244, 0.5);
+	background: linear-gradient(to bottom, #25a6f1, #54b9ff);
+	border: none;
+  }
+.card.card-statistic .card-title {
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 0.8px;
+	font-weight: 400;
+	font-size: 1.3rem;
+	margin-bottom: 0;
+	margin-top: 5px;
+  }
+.card.card-statistic .card-right p {
+	font-size: 1.5rem;
+	color: #fff;
+	margin-bottom: 0;
+  }
+.card.card-statistic .card-right span.green {
+	color: #6fff6f;
+  }
+.card.card-statistic .card-right span.red {
+	color: #ff7979;
+  }
+.card.card-statistic .chart-wrapper {
+	height: 100px;
+  }
+.card .card-header {
+	border: none;
+  }
+.card .card-header h4 {
+	font-size: 1.2rem;
+  }
+.card .card-header ~ .card-body {
+	background-color: #ffffff;
+	padding-top: 0;
+  }
+.card .card-content {
+	position: relative;
+  }
+.card .card-title {
+	font-size: 1.2rem;
+  }
+.card .card-body {
+	padding: 1.4rem 1.7rem;
+	background-color: #ffffff;
+	margin-bottom: 30px;
+  }
+.card .card-heading {
+	color: #555;
+	font-size: 1.5rem;
+  }
+.card .card-img-overlay {
+	background-color: rgba(0, 0, 0, 0.6);
+  }
+.card .card-img-overlay p {
+	color: #eee;
+  }
+.card .card-img-overlay .card-title {
+	color: #fff;
+  }
+

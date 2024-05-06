@@ -1,0 +1,40 @@
+<form  style="width: 600px;">
+
+  <div class="card-body p-4">
+    <div class="mb-3 mt-1 ">
+      <label class="fw-semibold">Name</label>
+      <input type="text" formControlName="firstname" class="form-control p-2 px-3 " required="">
+    </div>
+
+    <div class="mb-3">
+      <label class="fw-semibold">Adress</label>
+      <input type="text" formControlName="lastname" class="form-control p-2 px-3 " required="">
+    </div>
+    <div class="mb-3">
+      <label class="fw-semibold">Email</label>
+      <input type="email" formControlName="email" class="form-control p-2 px-3 " required="">
+    </div>
+
+    <div class="mb-3">
+      <label class="fw-semibold">Phone</label>
+      <input type="email" formControlName="phone" class="form-control p-2 px-3 ">
+    </div>
+
+    <!-- <div class="mb-3">
+      <label class="fw-semibold">Password</label>
+      <input type="password" formControlName="password" class="form-control p-2 px-3 ">
+    </div> -->
+
+    <div class="mb-3">
+      <label class="fw-semibold">URL</label>
+      <input type="text" formControlName="url"  class="form-control p-2 px-3 "
+        required>
+    </div>
+  </div>
+
+
+  <div mat-dialog-actions>
+    <button mat-button style="color: rgb(4, 4, 4); margin-bottom: 20px;margin-left: 10px;">Save</button>
+    <button mat-button style="color: rgb(4, 4, 4); margin-bottom: 20px;margin-left: 10px;">Cancel</button>
+  </div>
+</form>

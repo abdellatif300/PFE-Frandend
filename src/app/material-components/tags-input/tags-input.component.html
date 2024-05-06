@@ -1,0 +1,20 @@
+<mat-form-field class="example-chip-list">
+  <mat-label class="fw-semibold">Keywords</mat-label>
+  <mat-chip-grid #chipGrid aria-label="Enter keyword">
+    <mat-chip-row *ngFor="let keyword of keywords"
+                  (removed)="remove(keyword)"
+                  [editable]="true"
+                  (edited)="edit(keyword, $event)"
+                  [aria-description]="'press enter to edit ' + keyword.name">
+      {{keyword.name}}
+      <button matChipRemove [attr.aria-label]="'remove ' + keyword.name">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </mat-chip-row>
+    <input placeholder="New keyword..."
+           [matChipInputFor]="chipGrid"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)"/>
+  </mat-chip-grid>
+</mat-form-field>
